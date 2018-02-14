@@ -13,24 +13,21 @@ import org.junit.runners.Parameterized.Parameters;
 
 public class ParametrizacionDCombustible {
 
-	
+	private double depMax;	//propiedades para las pruebas	
 	private double depNivel;     //propiedades para las pruebas
-	private double depMax;	//propiedades para las pruebas
-	//private double res;      //resultado esperado
 	
-	DepositoCombustible pdc = new DepositoCombustible(depNivel,depMax);
+	DepositoCombustible pdc = new DepositoCombustible(40,depNivel);
 	
 	public ParametrizacionDCombustible(double n, double m)  //Constructor necesario para la prueba
 	{
-		this.depNivel = n;
-		this.depMax = m;
-		//this.res = res;
+		this.depMax = n;
+		this.depNivel = m;		
 	}
 	
-	@Parameters    //En este metodo introduciremos la bateria de pruebas	
+	@Parameters    //En este metodo introduciremos  la bateria de pruebas	
 	public static Collection<Object[]> pruebasConsumo()	{
 		//Bateria de pruebas a realizar
-		return Arrays.asList( new Object[][]{{30,40}} );
+		return Arrays.asList( new Object[][]{{40,20}} );
 	}
 	
 	@Test
@@ -48,13 +45,15 @@ public class ParametrizacionDCombustible {
 
 	@Test
 	public void testEstaVacio() {
-		assertFalse(pdc.estaVacio());
+		boolean vacio = pdc.estaVacio();
+		if (depNivel != 0)		
+		assertTrue(false);		
 	}	
 	
 	@Test
 	public void testDepositoMitad() {
-		
-		assertEquals(20,(pdc.getDepositoMax()/2),0);
+		double mitad = pdc.getDepositoMax()/2;
+		assertEquals(depNivel,mitad,0);
 	}	
 
 }
