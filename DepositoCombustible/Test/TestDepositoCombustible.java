@@ -1,12 +1,17 @@
+
 import static org.junit.Assert.*;
+import java.util.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestDeposito {
+
+public class TestDepositoCombustible {
+
 
 	DepositoCombustible comb;
+
 	
 	@Before
 	public void testValorInicial() {

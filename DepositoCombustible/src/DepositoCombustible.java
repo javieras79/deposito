@@ -1,3 +1,4 @@
+
 /**
  * DepositoCombustible es una clase que representa el depósito de gasolina de un coche
  * Un objeto DepositoCombustible agrupa la información necesaria para describir el estado del depósito:
